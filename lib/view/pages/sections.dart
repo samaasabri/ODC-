@@ -63,22 +63,25 @@ class Sections extends StatelessWidget {
                       )
                     ],
                   ),
-                  body: Column(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: 3,
-                          itemBuilder: (BuildContext context, index) {
-                            return cardForm(
-                                myCubit.sectionModel!.data[index].sectionSubject
-                                    .toString(),
-                                myCubit.sectionModel!.data[index].sectionDate.toString(),
-                                myCubit.sectionModel!.data[index].sectionStartTime.toString(),
-                                myCubit.sectionModel!.data[index].sectionEndTime.toString(),
-                                "section Day");
-                          })
-                    ],
+                  body: SingleChildScrollView(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      child:
+                        ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: myCubit.sectionModel!.data.length,
+                            itemBuilder: (BuildContext context, index) {
+                              return cardForm(
+                                  myCubit.sectionModel!.data[index].sectionSubject
+                                      .toString(),
+                                  myCubit.sectionModel!.data[index].sectionDate.toString(),
+                                  myCubit.sectionModel!.data[index].sectionStartTime.toString(),
+                                  myCubit.sectionModel!.data[index].sectionEndTime.toString(),
+                                  "section Day");
+                            })
+                      ,
+                    ),
                   ),
                 ),
               );

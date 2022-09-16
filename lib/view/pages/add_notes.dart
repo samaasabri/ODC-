@@ -16,6 +16,7 @@ class AddNote extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: HexColor.fromHex('dc802d'),
         leading: InkWell(
           onTap: () {
@@ -93,12 +94,13 @@ class AddNote extends StatelessWidget {
           Padding(padding: EdgeInsetsDirectional.all(15)),
           ElevatedButton(
               onPressed: () {
-                //SQLHelper.deleteAllNotes();
+                // SQLHelper.deleteAllNotes();
                 SQLHelper.addNotes(titleController.text, noteController.text,
                     dateController.text);
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => Notes()),
+
                 );
               },
               style: ElevatedButton.styleFrom(

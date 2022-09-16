@@ -65,22 +65,25 @@ class Lecture extends StatelessWidget {
                 )
               ],
             ),
-            body: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 3,
-                    itemBuilder: (BuildContext context, index) {
-                      return cardForm(
-                          myCubit.lectureModel!.data[index].lectureSubject
-                              .toString(),
-                         myCubit.lectureModel!.data[index].lectureDate.toString(),
-                          myCubit.lectureModel!.data[index].lectureStartTime.toString(),
-                          myCubit.lectureModel!.data[index].lectureEndTime.toString(),
-                          "Lecture Day");
-                    })
-              ],
+            body: SingleChildScrollView(
+              child: Container(
+                height: MediaQuery.of(context).size.height,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child:
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: myCubit.lectureModel!.data.length,
+                      itemBuilder: (BuildContext context, index) {
+                        return cardForm(
+                            myCubit.lectureModel!.data[index].lectureSubject
+                                .toString(),
+                           myCubit.lectureModel!.data[index].lectureDate.toString(),
+                            myCubit.lectureModel!.data[index].lectureStartTime.toString(),
+                            myCubit.lectureModel!.data[index].lectureEndTime.toString(),
+                            "Lecture Day");
+                      })
+                ,
+              ),
             ),
           ),
         );

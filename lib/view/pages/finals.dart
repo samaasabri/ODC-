@@ -63,26 +63,29 @@ class Finals extends StatelessWidget {
                       )
                     ],
                   ),
-                  body: Column(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ListView.builder(
-                          padding: const EdgeInsets.all(8),
-                          shrinkWrap: true,
-                          itemCount: 5,
-                          itemBuilder: (BuildContext context, index) {
-                            return cardForm(
-                                myCubit.finalModel!.data[index].examSubject
-                                    .toString(),
-                                myCubit.finalModel!.data[index].examDate
-                                    .toString(),
-                                myCubit.finalModel!.data[index].examStartTime
-                                    .toString(),
-                                myCubit.finalModel!.data[index].examEndTime
-                                    .toString(),
-                                "Exam Date");
-                          })
-                    ],
+                  body: SingleChildScrollView(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      child:
+                        ListView.builder(
+                            padding: const EdgeInsets.all(8),
+                            shrinkWrap: true,
+                            itemCount: myCubit.finalModel!.data.length,
+                            itemBuilder: (BuildContext context, index) {
+                              return cardForm(
+                                  myCubit.finalModel!.data[index].examSubject
+                                      .toString(),
+                                  myCubit.finalModel!.data[index].examDate
+                                      .toString(),
+                                  myCubit.finalModel!.data[index].examStartTime
+                                      .toString(),
+                                  myCubit.finalModel!.data[index].examEndTime
+                                      .toString(),
+                                  "Exam Date");
+                            })
+                      ,
+                    ),
                   ),
                 ),
               );

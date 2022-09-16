@@ -118,8 +118,8 @@ class News extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
 
           type: BottomNavigationBarType.fixed,
-          unselectedItemColor: Colors.black26,
-          selectedItemColor: Colors.black26,
+          unselectedItemColor: Colors.black54,
+          selectedItemColor: Colors.black54,
           items: <BottomNavigationBarItem>[
 
             BottomNavigationBarItem(
@@ -129,7 +129,7 @@ class News extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) =>  GridHome()),
                   );
-                },child: Icon(Icons.home_filled,color: HexColor.fromHex('dc802d'),)),
+                },child: Icon(Icons.home_filled,color: Colors.black54)),
                 backgroundColor: Colors.white,
                 label: 'home',
 

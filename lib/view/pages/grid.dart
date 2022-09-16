@@ -142,7 +142,7 @@ class GridHome extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) =>  News()),
                   );
-                }, child: Icon(Icons.home_filled)),
+                }, child: Icon(Icons.newspaper_rounded)),
                 backgroundColor: Colors.white,
                 label: 'news'),
             BottomNavigationBarItem(

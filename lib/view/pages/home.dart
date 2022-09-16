@@ -19,7 +19,7 @@ class Home extends StatelessWidget {
     return BlocConsumer<LoginCubit, LoginState>(listener: (context, state) {
       // do stuff here based on BlocA's state
       if (state is LoginSuceess) {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => GridHome()),
         );
